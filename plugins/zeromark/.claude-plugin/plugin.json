@@ -1,0 +1,20 @@
+{
+  "name": "zeromark",
+  "version": "1.0.0",
+  "description": "Read your saved X posts and your ZeroMark Living Memory from Claude Code: search them, open one, list them by stage, and ask for the one worth acting on this week. Read-only.",
+  "author": {
+    "name": "Tellurave LLC",
+    "url": "https://www.zeromark.io"
+  },
+  "homepage": "https://www.zeromark.io/docs/connector",
+  "license": "MIT",
+  "keywords": [
+    "bookmarks",
+    "x",
+    "twitter",
+    "memory",
+    "mcp"
+  ],
+  "privacyPolicyUrl": "https://www.zeromark.io/privacy",
+  "icon": ".claude-plugin/icon.png"
+}

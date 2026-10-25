@@ -1,0 +1,55 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 9 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  plugin:
+    if: github.event_name != 'schedule'
+    name: Plugin manifest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate the marketplace and plugin
+        run: |
+          npx --yes @anthropic-ai/claude-code plugin validate --strict .
+          npx --yes @anthropic-ai/claude-code plugin validate --profile directory --strict ./plugins/zeromark
+      - name: Check JSON files parse
+        run: |
+          for f in .claude-plugin/marketplace.json plugins/zeromark/.claude-plugin/plugin.json plugins/zeromark/.mcp.json server.json; do
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" && echo "ok  $f"
+          done
+      - name: Versions agree
+        run: |
+          a=$(node -p "require('./plugins/zeromark/.claude-plugin/plugin.json').version")
+          b=$(node -p "require('./.claude-plugin/marketplace.json').plugins[0].version")
+          c=$(node -p "require('./server.json').version")
+          echo "plugin $a · marketplace $b · registry $c"
+          test "$a" = "$b" && test "$a" = "$c"
+
+  server:
+    name: Server is reachable
+    # The live server, not this repository: checked weekly and on demand, never as a gate on a pull request.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Protected resource metadata answers
+        run: curl -fsS https://www.zeromark.io/.well-known/oauth-protected-resource/api/mcp | tee /dev/stderr | grep -q '"resource"'
+      - name: An unsigned call is refused with a challenge
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST https://www.zeromark.io/api/mcp \
+            -H 'content-type: application/json' -H 'accept: application/json, text/event-stream' \
+            -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}')
+          echo "status $code"
+          test "$code" = "401"

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.zeromark/zeromark",
+  "title": "ZeroMark",
+  "description": "Read your saved X posts and your ZeroMark Living Memory. Search, open, list by stage. Read-only.",
+  "websiteUrl": "https://www.zeromark.io/docs/connector",
+  "repository": {
+    "url": "https://github.com/asheus/zeromark-plugins",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "icons": [
+    {
+      "src": "https://www.zeromark.io/icons/icon-192.png",
+      "mimeType": "image/png",
+      "sizes": ["192x192"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://www.zeromark.io/api/mcp"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "zeromark": {
+      "type": "http",
+      "url": "https://www.zeromark.io/api/mcp"
+    }
+  }
+}

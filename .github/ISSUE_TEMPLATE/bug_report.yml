@@ -1,0 +1,51 @@
+name: Bug report
+description: Something in the plugin or connector does not work as described.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. For a security problem, please follow SECURITY.md instead of filing here.
+  - type: dropdown
+    id: client
+    attributes:
+      label: Client
+      options:
+        - Claude Code (plugin)
+        - Claude Code (manual mcp add)
+        - claude.ai or Claude Desktop
+        - ChatGPT
+        - Gemini CLI
+        - VS Code
+        - Cursor
+        - Perplexity
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: auth
+    attributes:
+      label: How you connected
+      options:
+        - OAuth sign-in
+        - ZeroMark key
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you asked, which tool ran, and what came back. Please leave out the contents of your saves.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Client version
+      placeholder: "claude --version"

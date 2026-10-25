@@ -1,0 +1,21 @@
+name: Feature request
+description: Suggest a tool, a better answer, or support for another client.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The question you want to ask your library, or the job you want done.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help
+  - type: checkboxes
+    id: readonly
+    attributes:
+      label: Read-only
+      options:
+        - label: I understand the connector is read-only on purpose, and this request does not need it to change anything in ZeroMark or on X.
