@@ -3,7 +3,7 @@
   "name": "io.zeromark/zeromark",
   "title": "ZeroMark",
   "description": "Read your saved X posts and your ZeroMark Living Memory. Search, open, list by stage. Read-only.",
-  "websiteUrl": "https://www.zeromark.io/docs/connector",
+  "websiteUrl": "https://www.zeromark.io",
   "repository": {
     "url": "https://github.com/asheus/zeromark-plugins",
     "source": "github"
