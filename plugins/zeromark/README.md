@@ -1,5 +1,7 @@
 # ZeroMark for Claude Code
 
+> **Coming soon.** The connector is not live on zeromark.io yet. Installing it now has nothing to connect to, and the connector guide is not published.
+
 Read the posts you saved on X, and your ZeroMark Living Memory, from Claude Code.
 
 ## Install
@@ -30,4 +32,4 @@ on X. Disconnect it any time in ZeroMark's Settings.
 The bundled skill, `zeromark-library`, tells Claude which tool fits which
 question and how to cite what it finds.
 
-Guide: https://www.zeromark.io/docs/connector
+The connector guide will be published when this ships. The site is https://www.zeromark.io.

@@ -12,11 +12,13 @@
 [![Read-only](https://img.shields.io/badge/access-read--only-2f6b3f?style=flat-square)](#privacy-and-security)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f0472c?style=flat-square)](LICENSE)
 
-[Website](https://www.zeromark.io) · [Connector guide](https://www.zeromark.io/docs/connector) · [Privacy](https://www.zeromark.io/privacy) · [Report a bug](https://github.com/asheus/zeromark-plugins/issues/new/choose)
+[Website](https://www.zeromark.io) · [Privacy](https://www.zeromark.io/privacy) · [Report a bug](https://github.com/asheus/zeromark-plugins/issues/new/choose)
 
 </div>
 
 ---
+
+> **Coming soon.** The connector is not live on zeromark.io yet. Installing it now has nothing to connect to, and the connector guide is not published.
 
 [ZeroMark](https://www.zeromark.io) reads every post you bookmarked on X and helps you clear the pile. The posts you mark Done become your **Living Memory**: notes that grow as you keep more.
 
@@ -183,7 +185,7 @@ The connector is on every ZeroMark plan, the free plan included. `weekly_questio
 | `429` or "slow down" | You passed 120 calls in 15 minutes. Wait a few minutes. |
 | Empty results | Connect X in ZeroMark first, so there is a library to read. |
 
-More in the [connector guide](https://www.zeromark.io/docs/connector).
+The connector guide will be published when this ships.
 
 ---
 
