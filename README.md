@@ -4,7 +4,7 @@
 
 # ZeroMark for Claude
 
-**Your saved X posts and your Living Memory, inside Claude.**
+**Your taste from X, in Claude: what you kept, what you let go, what you concluded.**
 
 [![Validate](https://github.com/asheus/zeromark-plugins/actions/workflows/validate.yml/badge.svg)](https://github.com/asheus/zeromark-plugins/actions/workflows/validate.yml)
 [![Claude Code plugin](https://img.shields.io/badge/Claude_Code-plugin-D97757?style=flat-square&logo=claude&logoColor=white)](#claude-code)
@@ -12,25 +12,26 @@
 [![Read-only](https://img.shields.io/badge/access-read--only-2f6b3f?style=flat-square)](#privacy-and-security)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f0472c?style=flat-square)](LICENSE)
 
-[Website](https://www.zeromark.io) · [Privacy](https://www.zeromark.io/privacy) · [Report a bug](https://github.com/asheus/zeromark-plugins/issues/new/choose)
+[Website](https://www.zeromark.io) · [Connector guide](https://www.zeromark.io/docs/connector) · [Privacy](https://www.zeromark.io/privacy) · [Report a bug](https://github.com/asheus/zeromark-plugins/issues/new/choose)
 
 </div>
 
 ---
 
-> **Coming soon.** The connector is not live on zeromark.io yet. Installing it now has nothing to connect to, and the connector guide is not published.
+**Other connectors give your AI what you saved. ZeroMark gives it what you decided.**
 
-[ZeroMark](https://www.zeromark.io) reads every post you bookmarked on X and helps you clear the pile. The posts you mark Done become your **Living Memory**: notes that grow as you keep more.
+[ZeroMark](https://www.zeromark.io) reads every post you bookmarked on X, and you clear the pile one decision at a time: Done or Let go. What you keep becomes your **Living Memory**, notes in your own words that change as you do. A pile of 3,000 bookmarks only says what you hoped to read; your decisions say what you actually think. That is what your assistant reads here, read-only: it never decides for you.
 
 This repository is ZeroMark's **Claude Code plugin marketplace**. It installs the ZeroMark connector, a hosted remote MCP server at `https://www.zeromark.io/api/mcp`, together with a skill that teaches Claude how to use it. The same server URL works in claude.ai, Claude Desktop, ChatGPT, Perplexity, VS Code, Cursor and any other client that speaks remote MCP.
 
 ### What you can ask
 
-- *"What did I save about GLP-1 trials last month? Link the posts."*
-- *"Which of my open saves are still worth reading, and which have gone stale?"*
-- *"Summarize my Living Memory on fundraising, then tell me what I keep coming back to."*
+- *"What do I actually think about AI agents? Use what I kept and what I let go."*
+- *"What have I changed my mind about this year?"*
+- *"Which voices do I keep, and which do I keep dropping?"*
+- *"Read my Living Memory on fundraising and tell me where my own notes disagree with each other."*
+- *"What connects my biotech saves to my AI ones?"*
 - *"From my saves, what is the one thing worth acting on this week?"*
-- *"Find that thread about pitch decks I bookmarked and pull the key points."*
 
 Every answer can link straight back to the post on x.com.
 
@@ -132,16 +133,19 @@ claude mcp add --transport http --scope user zeromark https://www.zeromark.io/ap
 
 ## Tools
 
-Eight tools, all read-only. None of them can mark a save Done, let it go, edit, delete, or touch your X account.
+Eleven tools, all read-only. None of them can mark a save Done, let it go, edit, delete, or touch your X account. You decide; your assistant reads what you decided.
 
 | Tool | What it does |
 | --- | --- |
-| `library_overview` | Counts by stage and field, your top voices, and how many Living Memory notes you have. A good first call. |
+| `get_taste` | What you decided, one save at a time: kept and let go per field and per voice, what you let go lately, and what your notes stopped believing, with dates. Nothing a model inferred. |
+| `library_overview` | Counts by stage and field, how many decisions you have made, and how many Living Memory notes you have. A good first call. |
 | `search_saves` | Search your saves by meaning and by words, with optional `status`, `since` and `until` filters. Up to 25 a page. |
-| `get_save` | One save in full, by its id, its x.com URL or its post id. |
+| `get_save` | One save in full, by its id, its x.com URL or its post id, with who decided it and when. |
 | `list_by_stage` | Your saves at one stage of their life (see below), newest first, with a cursor for the next page. |
 | `get_memory` | Your Living Memory as Markdown: every note, your own thoughts on it, and its sources. |
-| `weekly_question` | Asks ZeroMark which one save is worth acting on this week, and why. |
+| `get_map` | Your Map: each field with your keep rate, the saves in different fields that share rare ideas, and the notes you pinned together. |
+| `get_podcast` | Your latest saves podcast as text: what it covered, its outline and transcript, and a link to listen. |
+| `weekly_question` | Suggests the one open save worth acting on this week, and why. You decide. |
 | `search` | ChatGPT's deep-research search shape over the same library. |
 | `fetch` | ChatGPT's deep-research fetch shape, by id. |
 
@@ -185,7 +189,7 @@ The connector is on every ZeroMark plan, the free plan included. `weekly_questio
 | `429` or "slow down" | You passed 120 calls in 15 minutes. Wait a few minutes. |
 | Empty results | Connect X in ZeroMark first, so there is a library to read. |
 
-The connector guide will be published when this ships.
+More in the [connector guide](https://www.zeromark.io/docs/connector).
 
 ---
 

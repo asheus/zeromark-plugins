@@ -1,8 +1,6 @@
 # ZeroMark for Claude Code
 
-> **Coming soon.** The connector is not live on zeromark.io yet. Installing it now has nothing to connect to, and the connector guide is not published.
-
-Read the posts you saved on X, and your ZeroMark Living Memory, from Claude Code.
+Other connectors give Claude what you saved. ZeroMark gives it what you decided: what you kept, what you let go, and what you concluded, from Claude Code.
 
 ## Install
 
@@ -24,12 +22,16 @@ claude mcp add --transport http --scope user zeromark https://www.zeromark.io/ap
 
 ## What it can do
 
-Eight read-only tools: `library_overview`, `search_saves`, `get_save`,
-`list_by_stage`, `get_memory`, `weekly_question`, and `search` / `fetch`.
-It cannot mark anything Done, let anything go, edit or delete, in ZeroMark or
-on X. Disconnect it any time in ZeroMark's Settings.
+Eleven read-only tools. The one that matters most is `get_taste`: what you
+decided, one save at a time (kept and let go, per field and per voice, and what
+your notes stopped believing). The rest read your saves (`search_saves`,
+`get_save`, `list_by_stage`, `library_overview`, `search` / `fetch`), your
+Living Memory (`get_memory`), your Map (`get_map`), your podcast
+(`get_podcast`) and a weekly suggestion (`weekly_question`). It cannot mark
+anything Done, let anything go, edit or delete, in ZeroMark or on X: you
+decide, your assistant reads. Disconnect it any time in ZeroMark's Settings.
 
 The bundled skill, `zeromark-library`, tells Claude which tool fits which
 question and how to cite what it finds.
 
-The connector guide will be published when this ships. The site is https://www.zeromark.io.
+Guide: https://www.zeromark.io/docs/connector
