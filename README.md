@@ -4,7 +4,7 @@
 
 # ZeroMark for Claude
 
-**Your taste from X, in Claude: what you kept, what you let go, what you concluded.**
+**Your taste in X, in Claude: what you kept, what you let go, what you concluded.**
 
 [![Validate](https://github.com/asheus/zeromark-plugins/actions/workflows/validate.yml/badge.svg)](https://github.com/asheus/zeromark-plugins/actions/workflows/validate.yml)
 [![Claude Code plugin](https://img.shields.io/badge/Claude_Code-plugin-D97757?style=flat-square&logo=claude&logoColor=white)](#claude-code)
@@ -20,7 +20,7 @@
 
 **Other connectors give your AI what you saved. ZeroMark gives it what you decided.**
 
-[ZeroMark](https://www.zeromark.io) reads every post you bookmarked on X, and you clear the pile one decision at a time: Done or Let go. What you keep becomes your **Living Memory**, notes in your own words that change as you do. A pile of 3,000 bookmarks only says what you hoped to read; your decisions say what you actually think. That is what your assistant reads here, read-only: it never decides for you.
+[ZeroMark](https://www.zeromark.io) reads every post you bookmarked on X, and you clear the pile one decision at a time: Done or Let go. What you keep becomes your **Living Memory**, notes in your own words that change as you do. A pile of 3,000 bookmarks only says what you hoped to read; your decisions say what you actually think. That is your taste in X, and that is what your assistant reads here, read-only: it never decides for you.
 
 This repository is ZeroMark's **Claude Code plugin marketplace**. It installs the ZeroMark connector, a hosted remote MCP server at `https://www.zeromark.io/api/mcp`, together with a skill that teaches Claude how to use it. The same server URL works in claude.ai, Claude Desktop, ChatGPT, Perplexity, VS Code, Cursor and any other client that speaks remote MCP.
 
@@ -39,6 +39,16 @@ Every answer can link straight back to the post on x.com.
 
 ## Install
 
+### Let your agent set it up
+
+In Claude Code, Cursor, VS Code or Gemini CLI, paste this to your agent:
+
+```text
+Set up ZeroMark for me by following https://www.zeromark.io/docs/connector/agent-setup.md
+```
+
+It adds the server URL to the client it runs in, shows you the change before it makes it, and hands the sign-in to you in your browser. It installs nothing and never asks for a key in chat. Prefer to do it yourself? Pick your client below.
+
 ### Claude Code
 
 ```text
@@ -50,14 +60,14 @@ Then run `/mcp`, choose **zeromark** and sign in. A ZeroMark page asks you to ap
 
 ### claude.ai and Claude Desktop
 
-1. Open **Settings → Connectors → Add custom connector**.
-2. Name it `ZeroMark` and paste the server URL:
+1. Find **ZeroMark** in Claude's connector directory and connect it.
+2. If it is not listed, open **Settings → Connectors → Add custom connector**, name it `ZeroMark`, and paste the server URL:
 
    ```text
    https://www.zeromark.io/api/mcp
    ```
 
-3. Press **Connect**, sign in to ZeroMark and approve.
+3. Sign in to ZeroMark and approve.
 
 A connector added on claude.ai is also available in Claude Desktop and in the Claude mobile apps.
 
@@ -129,15 +139,19 @@ claude mcp add --transport http --scope user zeromark https://www.zeromark.io/ap
   --header "Authorization: Bearer zm_mcp_YOUR_KEY"
 ```
 
+### Check it worked
+
+Ask your assistant which ZeroMark tools it has. It should list eleven: `search_saves`, `get_save`, `list_by_stage`, `library_overview`, `get_memory`, `search`, `fetch`, `get_taste`, `get_map`, `get_podcast` and `weekly_question`. If they are missing, the sign-in has not finished; run `/mcp` (or your client's equivalent) and sign in again.
+
 ---
 
 ## Tools
 
-Eleven tools, all read-only. None of them can mark a save Done, let it go, edit, delete, or touch your X account. You decide; your assistant reads what you decided.
+Eleven tools, all read-only. None of them can mark a save Done, let it go, edit, delete, or touch your X account. You decide; your assistant reads your taste in X.
 
 | Tool | What it does |
 | --- | --- |
-| `get_taste` | What you decided, one save at a time: kept and let go per field and per voice, what you let go lately, and what your notes stopped believing, with dates. Nothing a model inferred. |
+| `get_taste` | Your taste in X: what you decided, one save at a time. Kept and let go per field and per voice, what you let go lately, and what your notes stopped believing, with dates. Nothing a model inferred. The unread pile is not taste. |
 | `library_overview` | Counts by stage and field, how many decisions you have made, and how many Living Memory notes you have. A good first call. |
 | `search_saves` | Search your saves by meaning and by words, with optional `status`, `since` and `until` filters. Up to 25 a page. |
 | `get_save` | One save in full, by its id, its x.com URL or its post id, with who decided it and when. |

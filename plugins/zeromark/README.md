@@ -1,6 +1,6 @@
 # ZeroMark for Claude Code
 
-Other connectors give Claude what you saved. ZeroMark gives it what you decided: what you kept, what you let go, and what you concluded, from Claude Code.
+Other connectors give Claude what you saved. ZeroMark gives it your taste in X: what you kept, what you let go, and what you concluded, from Claude Code.
 
 ## Install
 

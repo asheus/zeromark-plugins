@@ -1,7 +1,7 @@
 {
   "name": "zeromark",
-  "version": "1.1.0",
-  "description": "Your taste from X, in Claude Code: what you kept, what you let go, and what you concluded in ZeroMark, plus your Living Memory, Map and podcast. Read-only: it never decides for you.",
+  "version": "1.1.1",
+  "description": "Your taste in X, in Claude Code: what you kept, what you let go, and what you concluded in ZeroMark, plus your Living Memory, Map and podcast. Read-only: it never decides for you.",
   "author": {
     "name": "Tellurave LLC",
     "url": "https://www.zeromark.io"

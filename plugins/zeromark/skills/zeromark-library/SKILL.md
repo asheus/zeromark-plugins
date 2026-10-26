@@ -1,6 +1,6 @@
 ---
 name: zeromark-library
-description: Use when the user asks about posts they saved or bookmarked on X, what they think or care about, their reading backlog, their ZeroMark library, Map, podcast or Living Memory notes, or what to read or act on next. Reads their own decisions through the zeromark MCP server's read-only tools.
+description: Use when the user asks about posts they saved or bookmarked on X, their taste in X, what they think or care about, their reading backlog, their ZeroMark library, Map, podcast or Living Memory notes, or what to read or act on next. Reads their taste in X through the zeromark MCP server's read-only tools.
 ---
 
 # Reading the user's ZeroMark library
@@ -8,8 +8,10 @@ description: Use when the user asks about posts they saved or bookmarked on X, w
 ZeroMark holds the posts this user bookmarked on X and, more importantly,
 what they decided about them: what they kept (Done), what they let go, and
 the Living Memory notes built from what they kept, with their own thoughts.
-The `zeromark` MCP server is read-only: nothing you call can change, decide
-or delete anything, here or on X. The user decides; you read their decisions.
+Call that their taste in X. The unread pile is what they hoped to read, not
+their taste. The `zeromark` MCP server is read-only: nothing you call can
+change, decide or delete anything, here or on X. The user decides; you read
+their taste in X.
 
 ## Which tool
 

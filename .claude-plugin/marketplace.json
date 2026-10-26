@@ -11,8 +11,8 @@
     {
       "name": "zeromark",
       "source": "./plugins/zeromark",
-      "description": "Your taste from X, in Claude Code: what you kept, let go and concluded in ZeroMark. Read-only.",
-      "version": "1.1.0"
+      "description": "Your taste in X, in Claude Code: what you kept, let go and concluded in ZeroMark. Read-only.",
+      "version": "1.1.1"
     }
   ]
 }
